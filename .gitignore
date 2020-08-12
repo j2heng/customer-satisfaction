@@ -134,5 +134,9 @@ raw/
 # Checkpoints
 checkpoints/
 
+# vscode
+.vscode/
+
 # temporary 
 hyperparam_tuning.py
+
