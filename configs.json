@@ -1,0 +1,38 @@
+{
+    "filename": "./raw/AUTO_DA.csv",
+    "oov": "./raw/dict_replace_oov.json",
+    "model":{
+        "max_nb_words": 5000,
+        "max_sequence_length": 80,
+        "embedding_dim": 300,
+        "BiGRUAttention":{
+            "gru_units": 64,
+            "dense_1": 16,
+            "dense_activation_1": "relu",
+            "dropout": 0.1
+        },
+        "BiLSTMAttention":{
+            "lstm_units_1": 128,
+            "lstm_units_2": 64,
+            "dense_1": 64,
+            "dense_activation_1": "relu"
+        }
+    },
+    "compile": {
+        "loss": "categorical_crossentropy",
+        "optimizer": "adam"
+    },
+    "callbacks":{
+        "checkpoint_dir":"./checkpoints/",
+        "monitor": "val_f1_macro", 
+        "mode": "max", 
+        "save_best_only": true,
+        "verbose": 0,
+        "factor":0.1,
+        "patience":2,
+        "min_lr":0.000001
+    },
+    "epochs": 10,
+    "batch_size": 512,
+    "validation_split": 0.1
+}

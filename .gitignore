@@ -133,3 +133,6 @@ raw/
 
 # Checkpoints
 checkpoints/
+
+# temporary 
+hyperparam_tuning.py
